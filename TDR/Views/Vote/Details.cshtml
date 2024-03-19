@@ -1,0 +1,42 @@
+﻿@using TDRData.Models;
+@model TDR.ViewModels.Votacao.ReadVoteViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Voto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MenuName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MenuName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MenuDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.MenuDate.ToString("dd/MM/yyyy")
+        </dd>       
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StateText)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StateText)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.InteractionsNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.InteractionsNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

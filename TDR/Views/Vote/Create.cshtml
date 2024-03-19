@@ -1,0 +1,50 @@
+﻿@using TDR.ViewModels.Votacao;
+@model CreateVoteViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Votar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MenuName" class="control-label"></label>
+                <input asp-for="MenuName" class="form-control" readonly="readonly" />
+                <span asp-validation-for="MenuName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MenuDate" class="control-label"></label>
+                <input type="date" asp-for="MenuDate" class="form-control" readonly="readonly" />
+                <span asp-validation-for="MenuDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <select asp-for="State" class="form-control">
+                    <option value="@Convert.ToBoolean(1)">Irei Comer</option>
+                    <option value="@Convert.ToBoolean(0)">Não vou Comer</option>
+                </select>
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="MenuFk" />
+            <input type="hidden" asp-for="UserFk" />
+            <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,69 @@
+﻿@using System.Globalization;
+@using TDRData.Models;
+@model IEnumerable<TDR.ViewModels.Cardapios.ReadMenuViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+
+    var settings = ViewData["Settings"] as Settings;
+}
+
+<h1>Listagem de Cardápios</h1>
+
+@if (ViewData["Email"] as string == settings!.AdmEmailMorning || ViewData["Email"] as string == settings.AdmEmailEvening)
+{
+    <p>
+        <a asp-action="Create">Criar novo</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            @if (ViewData["Email"] as string == settings!.AdmEmail)
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.PeriodText)
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @item.Date.ToString("dd/MM/yyyy")
+                </td>
+                @if (ViewData["Email"] as string == settings!.AdmEmail)
+                {
+                    <td>
+                        @item.PeriodText
+                    </td>
+                }
+                @if (ViewData["Email"] as string == settings!.AdmEmailMorning || ViewData["Email"] as string == settings.AdmEmailEvening)
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

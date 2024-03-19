@@ -1,0 +1,15 @@
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.csproj.AssemblyReference.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.AssemblyInfoInputs.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.AssemblyInfo.cs
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.csproj.CoreCompileInputs.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\bin\Debug\net7.0\TDRDomain.deps.json
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\bin\Debug\net7.0\TDRDomain.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\bin\Debug\net7.0\TDRDomain.pdb
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\bin\Debug\net7.0\TDRData.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\bin\Debug\net7.0\TDRData.pdb
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.csproj.CopyComplete
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\refint\TDRDomain.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.pdb
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\ref\TDRDomain.dll

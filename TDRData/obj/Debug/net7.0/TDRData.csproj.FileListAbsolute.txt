@@ -1,0 +1,14 @@
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\bin\Debug\net7.0\TDRData.deps.json
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\bin\Debug\net7.0\TDRData.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\bin\Debug\net7.0\TDRData.pdb
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.AssemblyInfoInputs.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.AssemblyInfo.cs
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.csproj.CoreCompileInputs.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\refint\TDRData.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.pdb
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\ref\TDRData.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\bin\Debug\net7.0\TDRData.runtimeconfig.json
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.csproj.AssemblyReference.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.genruntimeconfig.cache

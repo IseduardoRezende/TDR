@@ -1,0 +1,56 @@
+﻿@using TDRData.Models;
+@model IEnumerable<TDR.ViewModels.Votacao.ReadVoteViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Votar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MenuDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MenuName)
+                </td>
+                <td>
+                    @item.MenuDate.ToString("dd/MM/yyyy")
+                </td>
+                @if (item.Id == null || item.Id == default)
+                {
+                    <td>
+                        <a asp-action="Create">Votar</a>
+                    </td>
+                }
+                else
+                {
+                    if (item.InteractionsNumber < 1)
+                    {
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Alterar Voto</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

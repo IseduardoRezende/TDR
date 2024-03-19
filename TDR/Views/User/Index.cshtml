@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TDR.ViewModels.Usuario.ReadUserViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem de Usuários</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodDescription)
+            </th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodDescription)
+                </td>                                
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Voltar</a>
+</div>

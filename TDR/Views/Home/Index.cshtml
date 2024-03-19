@@ -1,0 +1,26 @@
+﻿@using TDRData.Models;
+@model Settings
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-Vindo ao TDR</h1>
+</div>
+
+@if (ViewData["Email"] as string == Model.AdmEmail)
+{
+    <h5><a asp-controller="User" asp-action="Index">Usuários</a></h5>
+    <h5><a asp-controller="Menu" asp-action="Index">Cardápios</a></h5>
+}
+else if (ViewData["Email"] as string == Model.AdmEmailMorning || ViewData["Email"] as string == Model.AdmEmailEvening)
+{
+    <h5><a asp-controller="Menu" asp-action="Index">Cardápios</a></h5>
+}
+else
+{
+    <h5><a asp-controller="User" asp-action="Details" asp-route-id="@ViewData["Id"]">Conta</a></h5>
+    <h5><a asp-controller="Menu" asp-action="Index">Cardápios</a></h5>
+    <h5><a asp-controller="Vote" asp-action="Index">Votar</a></h5>
+}

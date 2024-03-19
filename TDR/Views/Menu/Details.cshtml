@@ -1,0 +1,64 @@
+﻿@using System.Globalization;
+@using TDRData.Models;
+@model TDR.ViewModels.Cardapios.ReadMenuViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    var settings = ViewData["Settings"] as Settings;
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Cardápio</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Model?.Date.ToString("dd/MM/yyyy")
+        </dd>
+        @if (ViewData["Email"] as string == settings!.AdmEmailMorning || ViewData["Email"] as string == settings.AdmEmailEvening)
+        {            
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.StartVote)
+            </dt>
+            <dd class="col-sm-10">
+                @Model?.StartVote.ToString(new CultureInfo("pt-BR"))
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EndVote)
+            </dt>
+            <dd class="col-sm-10">
+                @Model?.EndVote.ToString(new CultureInfo("pt-BR"))
+            </dd>
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QtyVotes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QtyVotes)
+        </dd>
+    </dl>
+</div>
+
+@if (ViewData["Email"] as string == settings!.AdmEmailMorning || ViewData["Email"] as string == settings.AdmEmailEvening)
+{
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+        <a asp-action="Index">Voltar</a>
+    </div>
+}
+else
+{
+    <div>
+        <a asp-action="Index">Voltar</a>
+    </div>
+}
