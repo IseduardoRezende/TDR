@@ -15,3 +15,4 @@ C:\Users\Fabiola\Desktop\CSharp\TDR\TDRConfiguration\obj\Debug\net7.0\TDRConfigu
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRConfiguration\obj\Debug\net7.0\refint\TDRConfiguration.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRConfiguration\obj\Debug\net7.0\TDRConfiguration.pdb
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRConfiguration\obj\Debug\net7.0\ref\TDRConfiguration.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRConfiguration\obj\Debug\net7.0\TDRConfiguration.sourcelink.json

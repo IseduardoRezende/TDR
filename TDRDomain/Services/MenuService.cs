@@ -32,5 +32,25 @@ namespace TDRDomain.Services
             return await base
                 .FindByAsync(c => c.Date == DateTime.Now.Date && c.PeriodFk == periodFk && c.DeletedAt == null);
         }
+
+        public override Task<ReadMenuViewModel> IsValidCreate(CreateMenuViewModel createModel)
+        {
+            return Task.FromResult(base.BuildReadModel());
+        }
+
+        public override Task<ReadMenuViewModel> IsValidUpdate(UpdateMenuViewModel updateModel)
+        {
+            return Task.FromResult(base.BuildReadModel());
+        }
+
+        public override Menu UpdateFields(Menu model, UpdateMenuViewModel updateModel)
+        {
+            model.Name = updateModel.Name;
+            model.Date = updateModel.Date;
+            model.StartVote = updateModel.StartVote;
+            model.EndVote = updateModel.EndVote;
+
+            return model;
+        }
     }
 }

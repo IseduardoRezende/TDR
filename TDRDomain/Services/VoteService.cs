@@ -13,17 +13,7 @@ namespace TDRDomain.Services
         public VoteService(IVoteRepository voteRepository, IMenuService menuService, IMapper mapper) : base(voteRepository, mapper)
         {
             _menuService = menuService;
-        }
-
-        public override Task<ReadVoteViewModel> UpdateAsync(UpdateVoteViewModel updateModel)
-        {
-            if (updateModel == null) 
-                return null;
-
-            updateModel.InteractionsNumber--;
-
-            return base.UpdateAsync(updateModel);
-        }
+        }        
 
         public ushort GetTotalVotes(long menuId)
         {
@@ -37,9 +27,10 @@ namespace TDRDomain.Services
         public bool CanVote(ReadVoteViewModel vote)
         {
             if (vote == null)
-                return false;
+                return false;                  
 
-            if (vote.InteractionsNumber < 1) return false;
+            if (vote!.InteractionsNumber < 1)
+                return false;
 
             var currentDate = DateTime.Now;
 
@@ -53,11 +44,11 @@ namespace TDRDomain.Services
         {
             //Obtendo registro de Voto do dia
             var vote = await base
-                .FindByAsync(c => c.UserFk == userFk && c.Menu.Date == DateTime.Now.Date && 
-                             c.Menu.PeriodFk == periodFk && 
+                .FindByAsync(c => c.UserFk == userFk && c.Menu.Date == DateTime.Now.Date &&
+                             c.Menu.PeriodFk == periodFk &&
                              c.Menu.DeletedAt == null, "Menu");
 
-            if (vote != null) 
+            if (vote != null)
                 return vote;
 
             //Caso não exista registro de Voto é consultado a Refeição do dia
@@ -83,8 +74,25 @@ namespace TDRDomain.Services
             var menu = await _menuService.GetCurrentMenuAsync(periodFk);
 
             if (menu == null) return null;
-            
+
             return new ReadVoteViewModel { MenuFk = (long)menu.Id!, UserFk = userFk, MenuName = menu.Name, MenuDate = menu.Date };
+        }
+
+        public override Task<ReadVoteViewModel> IsValidCreate(CreateVoteViewModel createModel)
+        {
+            return Task.FromResult(base.BuildReadModel());
+        }
+
+        public override Task<ReadVoteViewModel> IsValidUpdate(UpdateVoteViewModel updateModel)
+        {
+            return Task.FromResult(base.BuildReadModel());
+        }
+
+        public override Vote UpdateFields(Vote model, UpdateVoteViewModel updateModel)
+        {
+            model.State = updateModel.State;
+            model.InteractionsNumber = updateModel.InteractionsNumber--;
+            return model;
         }
     }
 }

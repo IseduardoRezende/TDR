@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tHqd+nj7PX8BfwqAXqU0Z55yljBGXN8iutjGHuJD80U=",
+  "Hash": "R6LUsKR/rKECavr1WmyLspmOOKgBikMLpXBygVS+7Vs=",
   "Source": "TDR",
   "BasePath": "_content/TDR",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\TDR.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\css\\BaseError.css",
+      "SourceId": "TDR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\",
+      "BasePath": "_content/TDR",
+      "RelativePath": "css/BaseError.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\BaseError.css"
+    },
+    {
       "Identity": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\css\\site.css",
       "SourceId": "TDR",
       "SourceType": "Discovered",
@@ -91,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\js\\BaseError.js",
+      "SourceId": "TDR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\",
+      "BasePath": "_content/TDR",
+      "RelativePath": "js/BaseError.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\BaseError.js"
     },
     {
       "Identity": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\js\\site.js",

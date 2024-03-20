@@ -1,13 +1,27 @@
 ﻿@using TDR.ViewModels.Votacao;
+@using TDRDomain.Bases;
 @model UpdateVoteViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
+<head>
+    <link href="~/css/BaseError.css" rel="stylesheet" />
+</head>
+
 <h1>Editar Voto - Mudanças de Voto Restantes: <bold>@Model.InteractionsNumber</bold></h1>
 
 <hr />
+
+@if (ViewData["BaseError"] as BaseError is BaseError baseError)
+{
+    foreach (var error in baseError.Errors)
+    {
+        <p class="text-danger-base-error">Field: @error.Field - Error: @error.Description</p>
+    }
+}
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -46,6 +60,9 @@
 </div>
 
 @section Scripts {
+
+    <script src="~/js/BaseError.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var selectElement = document.getElementById("selectValue");

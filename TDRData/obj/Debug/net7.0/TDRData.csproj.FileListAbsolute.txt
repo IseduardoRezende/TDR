@@ -12,3 +12,4 @@ C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\ref\TDRData.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\bin\Debug\net7.0\TDRData.runtimeconfig.json
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.csproj.AssemblyReference.cache
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.genruntimeconfig.cache
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRData\obj\Debug\net7.0\TDRData.sourcelink.json

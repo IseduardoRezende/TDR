@@ -13,3 +13,4 @@ C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\refint\TDRDomain.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.pdb
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\ref\TDRDomain.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDRDomain\obj\Debug\net7.0\TDRDomain.sourcelink.json

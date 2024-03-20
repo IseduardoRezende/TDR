@@ -409,3 +409,4 @@ C:\Users\Fabiola\Desktop\CSharp\TDR\TDR\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDR\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDR\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Fabiola\Desktop\CSharp\TDR\TDR\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Fabiola\Desktop\CSharp\TDR\TDR\obj\Debug\net7.0\TDR.sourcelink.json

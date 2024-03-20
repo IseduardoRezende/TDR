@@ -50,7 +50,13 @@ namespace TDR.Controllers
             if (!ModelState.IsValid)
                 return View(updateModel);
 
-            await BaseService.UpdateAsync(updateModel);
+            var user = await BaseService.UpdateAsync(updateModel);
+
+            if (user.BaseError != null)
+            {
+                ViewData["BaseError"] = user.BaseError;
+                return View(updateModel);
+            }
 
             await ConfigureClaims.ConfigureLogOut(HttpContext);
 
@@ -64,6 +70,6 @@ namespace TDR.Controllers
 
             var user = await _userService.FindByAsync(c => c.Id == id && c.DeletedAt == null, "Period");
             return View(user);
-        }       
+        }
     }
 }

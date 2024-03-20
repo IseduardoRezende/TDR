@@ -1,13 +1,27 @@
-﻿@model TDR.ViewModels.Cardapios.CreateMenuViewModel
+﻿@using TDRDomain.Bases;
+@model TDR.ViewModels.Cardapios.CreateMenuViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
+<head>
+    <link href="~/css/BaseError.css" rel="stylesheet" />
+</head>
+
 <h1>Criar </h1>
 
 <h4>Cardápio</h4>
 <hr />
+
+@if (ViewData["BaseError"] as BaseError is BaseError baseError)
+{
+    foreach (var error in baseError.Errors)
+    {
+        <p class="text-danger-base-error">Field: @error.Field - Error: @error.Description</p>
+    }
+}
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -45,6 +59,9 @@
 </div>
 
 @section Scripts {
+
+    <script src="~/js/BaseError.js"></script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

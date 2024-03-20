@@ -56,8 +56,11 @@ namespace TDR.Controllers
 
             var user = await _userService.CreateAsync(login);
 
-            if (user == null)
+            if (user.BaseError != null)
+            {
+                ViewData["BaseError"] = user.BaseError;
                 return View();
+            }
 
             return RedirectToAction("Index");
         }

@@ -31,7 +31,7 @@ namespace TDR.Controllers
 
             var vote = _voteService.GetCurrentVoteAsync(userId, period).GetAwaiter().GetResult();
 
-            //Não é possível criar um novo voto para registro de voto já existente
+            //Não é possível criar um novo voto para menu inexistente ou registro de voto já existente
             if (vote == null || vote.Id != null)
                 return RedirectToAction("Index");
 

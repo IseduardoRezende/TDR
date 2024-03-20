@@ -1,13 +1,27 @@
 ﻿@using TDR.ViewModels.Logins;
+@using TDRDomain.Bases;
 @model CreateLoginViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
+<head>
+    <link href="~/css/BaseError.css" rel="stylesheet" />
+</head>
+
 <h1>Criar Conta</h1>
 
 <hr />
+
+@if (ViewData["BaseError"] as BaseError is BaseError baseError)
+{
+    foreach (var error in baseError.Errors)
+    {
+        <p class="text-danger-base-error">Field: @error.Field - Error: @error.Description</p>
+    }
+}
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -34,7 +48,7 @@
                     <option value="2">Noturno</option>
                 </select>
                 <span asp-validation-for="PeriodFk" class="text-danger"></span>
-            </div>                       
+            </div>
             <div class="form-group">
                 <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
@@ -47,5 +61,10 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="~/js/BaseError.js"></script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

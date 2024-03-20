@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\TDR.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\css\\BaseError.css",
+      "PackagePath": "staticwebassets\\css\\BaseError.css"
+    },
+    {
       "Id": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\js\\BaseError.js",
+      "PackagePath": "staticwebassets\\js\\BaseError.js"
     },
     {
       "Id": "C:\\Users\\Fabiola\\Desktop\\CSharp\\TDR\\TDR\\wwwroot\\js\\site.js",

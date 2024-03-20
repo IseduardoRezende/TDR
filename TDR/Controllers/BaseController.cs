@@ -17,7 +17,7 @@ namespace TDR.Controllers
         public BaseController(IBaseService<CreateModel, UpdateModel, ReadModel, Model> baseService, IMapper mapper) : base(baseService, mapper)
         {
             BaseService = baseService;
-        }                       
+        }
 
         public virtual IActionResult Create()
         {
@@ -30,16 +30,22 @@ namespace TDR.Controllers
         {
             if (!ModelState.IsValid)
                 return View(createModel);
-         
-            await BaseService.CreateAsync(createModel);
+
+            var result = await BaseService.CreateAsync(createModel);
+
+            if (result.BaseError != null)
+            {
+                ViewData["BaseError"] = result.BaseError;
+                return View(result);
+            }
 
             return RedirectToAction("Index", "Home");
-        }       
+        }
 
         public virtual async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
-                return BadRequest();          
+                return BadRequest();
 
             var readModel = await base.BaseReadOnlyService.FindByAsync(c => c.Id == id.Value && c.DeletedAt == null);
 
@@ -61,11 +67,17 @@ namespace TDR.Controllers
             if (!ModelState.IsValid)
                 return View(updateModel);
 
-            await BaseService.UpdateAsync(updateModel);
-            
+            var result = await BaseService.UpdateAsync(updateModel);
+
+            if (result.BaseError != null)
+            {
+                ViewData["BaseError"] = result.BaseError;
+                return View(result);
+            }
+
             return RedirectToAction("Index", "Home");
-        }        
-        
+        }
+
         public virtual async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -82,9 +94,9 @@ namespace TDR.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public virtual async Task<IActionResult> DeleteConfirmed(long id)
-        {           
+        {
             await BaseService.DeleteAsync(id);
             return RedirectToAction("Index", "Home");
-        }        
+        }
     }
 }
