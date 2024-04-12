@@ -20,20 +20,46 @@ namespace TDRDomain.Services
 
         public override async Task<ReadUserViewModel> UpdateAsync(UpdateUserViewModel updateModel)
         {
+            var validation = await this.IsValidUpdate(updateModel);
+
+            if (validation.BaseError is { HasErrors: true, Errors.Count: > 0 })
+                return validation;
+
+            updateModel.Email = updateModel.Email.BuildEmail();
             updateModel.Salt = Guid.NewGuid().ToString();
             updateModel.Password = updateModel.Password.ConvertToSHA512(updateModel.Salt);
-            updateModel.Email = updateModel.Email.BuildEmail();
 
-            return await base.UpdateAsync(updateModel);
+            var model = await BaseReadOnlyRepository.FindByAsync(m => m.Id == updateModel.Id);
+
+            if (model == null)
+            {
+                validation.BaseError!.AddError(nameof(updateModel.Id), "Non-existent value");
+                return validation;
+            }
+
+            model = UpdateFields(model, updateModel);
+
+            var updatedModel = await BaseRepository.UpdateAsync(model);
+
+            return Mapper.Map<ReadUserViewModel>(updatedModel);
         }
 
         public override async Task<ReadUserViewModel> CreateAsync(CreateUserViewModel createModel)
         {
+            var validation = await this.IsValidCreate(createModel);
+
+            if (validation.BaseError is { HasErrors: true, Errors.Count: > 0 })
+                return validation;
+
             createModel.Salt = Guid.NewGuid().ToString();
             createModel.Password = createModel.Password.ConvertToSHA512(createModel.Salt);
             createModel.Email = createModel.Email.BuildEmail();
 
-            return await base.CreateAsync(createModel);
+            var model = Mapper.Map<User>(createModel);
+
+            var createdModel = await BaseRepository.CreateAsync(model);
+
+            return Mapper.Map<ReadUserViewModel>(createdModel);
         }
 
         public async Task<ReadUserViewModel> LogInAsync(ReadLoginViewModel login)
@@ -144,6 +170,7 @@ namespace TDRDomain.Services
             model.Email = updateModel.Email;
             model.Password = updateModel.Password;
             model.PeriodFk = updateModel.PeriodFk;
+            model.Salt = updateModel.Salt!;
 
             return model;
         }

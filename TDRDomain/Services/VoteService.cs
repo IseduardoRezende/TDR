@@ -34,7 +34,7 @@ namespace TDRDomain.Services
 
             var currentDate = DateTime.Now;
 
-            if (currentDate < vote.MenuStartVote && currentDate > vote.MenuEndVote)
+            if (currentDate < vote.MenuStartVote || currentDate > vote.MenuEndVote)
                 return false;
 
             return true;
@@ -91,7 +91,7 @@ namespace TDRDomain.Services
         public override Vote UpdateFields(Vote model, UpdateVoteViewModel updateModel)
         {
             model.State = updateModel.State;
-            model.InteractionsNumber = updateModel.InteractionsNumber--;
+            model.InteractionsNumber--;
             return model;
         }
     }
